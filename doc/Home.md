@@ -7,9 +7,10 @@ Crucial to the realism of this simulation is that you'll be picking up this proj
 > # Questions
 > First, see if you can figure it out. Read any/all related documentation, do some intrepid googling, and remember that Stackoverflow is your best friend.
 >
-> Seocnd, DO NOT hesitate to reach out, especially if your question is specific to the project itself and therefore ungoogleable. Because communication is life-or-death for any dev team, and this assessment is intended to simulate working on a real project, please reach out to me (Matthew) at [matthew@abstrac.tech](mailto:matthew@abstract.tech) with any questions that come up. Some aspects of the code may not make much sense or be familiar. This is by design. This project is somewhat complex and uses some esoteric techniques to make communication a necessary part of the exercise.
+> Seocnd, DO NOT hesitate to reach out, especially if your question is specific to the project itself and therefore ungoogleable. Because communication is life-or-death for any dev team, and this assessment is intended to simulate working on a real project, please reach out to me (Matthew) via whatever communication channel we've set up ahead of time (Slack, email, etc.) with any questions that come up. Some aspects of the code may not make much sense or be familiar. This is by design. This project is somewhat complex and uses some esoteric techniques to make communication a necessary part of the exercise.
 >
-> If you don't hear back from me within 1 weekday, it's almost certainly because I forgot to check my email. If that happens, email Eric Roetzer ([eroetzer@abstract.tech](mailto:eroetzer@abstract.tech)) and tell him to ping me on Slack about checking my email. You won't be the first or last person to do this.
+> If you don't hear back from me within 1 weekday, it's almost certainly because I forgot to reply. If that happens, either @-ping me on Slack if we've set up a channel there, or email Eric Roetzer ([eroetzer@abstract.tech](mailto:eroetzer@abstract.tech)) if we're communicating via email and tell him to ping me on Slack about checking my email. You won't be the first or last person to do this.
+
 
 # Assessment Checklist
 - [ ] Read through rest of this doc
