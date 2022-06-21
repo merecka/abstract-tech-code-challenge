@@ -1,0 +1,27 @@
+.core-animated-switch {
+  &-fade {
+    &-enter { opacity: 0; z-index: 1; }
+    &-enter-active { opacity: 1; z-index: 1; }
+    &-exit { opacity: 1; z-index: 0; }
+    &-exit-active { opacity: 0; z-index: 0; }
+
+    &-enter-active, &-exit-active {
+      transition: opacity 250ms ease, 250ms ease;
+    }
+  }
+
+  &-glide {
+    &-enter { opacity: 0; transform: translateX(-100%); }
+    &-enter-active { opacity: 1; transform: translateX(0%); }
+    &-exit { opacity: 1; transform: translateX(0%); }
+    &-exit-active { opacity: 0; transform: translateX(100%); }
+  }
+
+  &-fade, &-glide {
+    width: 100%;
+
+    &-enter-active, &-exit-active {
+      transition: opacity 250ms ease, transform 250ms ease;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@abst/snackbar",
+  "version": "5.1.0",
+  "main": "index.js",
+  "peerDependencies": {
+    "antd": "^4.3.4",
+    "react": "^17.0.1"
+  },
+  "license": "MIT",
+  "private": true
+}

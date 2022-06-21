@@ -1,0 +1,12 @@
+{
+  "name": "@abst/sidebar",
+  "version": "5.1.0",
+  "main": "index.js",
+  "peerDependencies": {
+    "@abst/hooks": "file:../hooks",
+    "react": "^17.0.1",
+    "react-redux": "^7.2.1"
+  },
+  "license": "MIT",
+  "private": true
+}

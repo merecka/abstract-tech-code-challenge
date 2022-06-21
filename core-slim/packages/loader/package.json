@@ -1,0 +1,17 @@
+{
+  "name": "@abst/loader",
+  "version": "5.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "@abst/theme": "file:../theme",
+    "react-content-loader": "6.1.0",
+    "react-spinners": "0.10.6"
+  },
+  "peerDependencies": {
+    "antd": "^4.2.0",
+    "react": "^17.0.1",
+    "react-grid-system": "^7.0.2"
+  },
+  "license": "MIT",
+  "private": true
+}

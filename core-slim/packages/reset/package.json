@@ -1,0 +1,11 @@
+{
+  "name": "@abst/reset",
+  "version": "5.1.0",
+  "main": "index.js",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^17.0.1"
+  },
+  "license": "MIT",
+  "private": true
+}

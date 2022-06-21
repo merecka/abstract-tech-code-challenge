@@ -1,0 +1,49 @@
+.ant-card-head {
+  min-height: 1px;
+}
+
+body {
+  background-color: @canvas-primary;
+  max-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  line-height: 1.25
+}
+/* highlight */
+div, span, p, input {
+  &::selection {
+    background-color: fade(@brand-primary, 33%);
+    color: @text-primary;
+  }
+}
+
+#app {
+  overflow: initial;
+}
+
+/* popover */
+.ant-popover-message {
+  align-items: center;
+  display: flex;
+
+  .ant-popover-message-title {
+    padding-left: 12px
+  }
+}
+
+/* no-data placeholder */
+.ant-table-placeholder {
+  z-index: auto;
+}
+
+/* Form Inputs */
+.FormInput, .ant-input {
+  background-color: @canvas-component;
+}
+
+
+/* Drawer */
+.ant-drawer-content {
+  background-color: @canvas-primary;
+}

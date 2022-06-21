@@ -1,0 +1,23 @@
+version: '2.3'
+services:
+  base:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: npm i
+    container_name: seven_sec
+    environment:
+      - BABEL_CACHE_PATH=/app/.cache/bab-cache.json
+      - NODE_ENV=development
+      - PORT=80
+      - PROJECT_NAME=7 Seconds Or Less
+      - PROJECT_KEY=SevenSecOL
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    working_dir: /app
+  development:
+    command: node core-slim/configs/index.js
+    extends:
+      service: base
