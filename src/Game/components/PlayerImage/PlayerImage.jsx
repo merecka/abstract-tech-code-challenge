@@ -26,11 +26,11 @@ export function PlayerImage({
   return (
     <View
       className={cn(cls.wpr, { 'no-bg': bg === false, shadow })}
-      role="button"
+      role='button'
       {...{ onClick }}
     >
       {/* NOTE: uncomment this (and the import statement) to see the name of the player */}
-      {/* <Text t={`(This is ${player.displayFirstLast})`} className="cheat" /> */}
+      {/* <Text t={`(This is ${player.displayFirstLast})`} className='cheat' /> */}
       <img
         src={`${pfx}/${playerId}.png`}
         onError={(e) => {
