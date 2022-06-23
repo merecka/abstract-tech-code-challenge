@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "./PlayerImage.style";
 import { useCss } from "@abst/hooks";
-import { Text, View } from "@abst/web-components";
+import { /*Text ,*/ View } from "@abst/web-components";
 import { usePlayer } from "@src/Game/hooks";
 import cn from "classnames";
 
@@ -30,18 +30,13 @@ export function PlayerImage({
       {...{ onClick }}
     >
       {/* NOTE: uncomment this (and the import statement) to see the name of the player */}
-      <Text t={`(This is ${player.displayFirstLast})`} className="cheat" />
+      {/* <Text t={`(This is ${player.displayFirstLast})`} className="cheat" /> */}
       <img
         src={`${pfx}/${playerId}.png`}
         onError={(e) => {
-          e.currentTarget.onerror = null;
-          e.currentTarget.src =
-            "https://cdn.nba.com/headshots/nba/latest/1040x760/logoman.png";
+          e.currentTarget.onerror = null; // prevents endless looping
+          e.currentTarget.src = `${pfx}/logoman.png`;
         }}
-        // onError={({ currentTarget }) => {
-        //   currentTarget.onerror = null; // prevents looping
-        //   currentTarget.src={ `${pfx}/logoman.png` }
-        // }}
       />
     </View>
   );
