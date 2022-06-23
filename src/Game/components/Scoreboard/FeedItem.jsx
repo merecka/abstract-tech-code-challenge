@@ -1,6 +1,7 @@
-import React, { createRef, Component } from 'react';
-import { Text, View } from '@abst/web-components';
-
+import React from "react";
+import { Text, View } from "@abst/web-components";
+import { useRounds } from "@src/Game/hooks";
+import { useRound } from "../../hooks/useRound";
 
 /*
  * NOTE: props.score should be displayed via an internal value instead of using
@@ -15,58 +16,41 @@ import { Text, View } from '@abst/web-components';
  * (store ref value -> assign changes to ref.current -> manually update)
  * internally, so the refactored function component should be relatively simple.
  */
-export class FeedItem extends Component {
-  constructor(props) {
-    super(props);
+export function FeedItem({ index }) {
+  const round = useRound(index) || {};
+  const Rounds = useRounds();
+  const _round = Rounds.all[index];
 
-    this.Score = createRef(this.getScore(props.core));
-  }
+  const {
+    jersey: jerseyNumber,
+    displayFirstLast: name,
+    positionCode,
+  } = round.player;
+
+  const { fullName: teamName } = round.team;
 
   /* normalizes the score value */
-  getScore = (score) => _.isFinite(score) ? _.round(score) : 0;
+  const roundScore = _.isFinite(_round.score) ? _.round(_round.score) : 0;
 
-  componentDidUpdate(prevProps) {
-    /* only update when score changes */
-    if (!_.isEqual(this.props.score, prevProps.score)) {
-      /* update ref value with normalized, updated score */
-      /* TODO: (low-priority/future): call animation fn here */
-      this.Score.current = this.getScore(this.props.score);
-      /*
-       * manually update the component, since changing the value of ref.current
-       * won't automatically trigger a secondary render.
-       */
-      this.forceUpdate();
-    }
-  }
-
-  render() {
-    const {
-      jerseyNumber,
-      name,
-      positionCode,
-      teamName
-    } = this.props;
-
-    return (
-      <View className='list-item' xs={ 12 }>
-        <View className='data-wpr'>
-          <View className='player-num-wpr'>
-            <Text className='player-num' t={ jerseyNumber || '--' } />
-          </View>
-          <View className='data-ctr'>
-            <View className='primary'>
-              <Text className='player-name' t={ name || 'N/A' } />
-            </View>
-            <View className='secondary'>
-              <Text className='position' t={ `${positionCode},` } />
-              <Text className='team' t={ teamName } />
-            </View>
-          </View>
+  return (
+    <View className="list-item" xs={12}>
+      <View className="data-wpr">
+        <View className="player-num-wpr">
+          <Text className="player-num" t={jerseyNumber || "--"} />
         </View>
-        <View className='score-wpr'>
-          <Text className='score' t={ this.Score.current } />
+        <View className="data-ctr">
+          <View className="primary">
+            <Text className="player-name" t={name || "N/A"} />
+          </View>
+          <View className="secondary">
+            <Text className="position" t={`${positionCode},`} />
+            <Text className="team" t={teamName} />
+          </View>
         </View>
       </View>
-    );
-  }
+      <View className="score-wpr">
+        <Text className="score" t={roundScore} />
+      </View>
+    </View>
+  );
 }
