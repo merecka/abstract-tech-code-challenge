@@ -46,3 +46,6 @@ tmp/
 
 #babel cache
 .cache/
+
+# prettier
+.prettierrc.json

@@ -1,11 +1,11 @@
-import React from "react";
-import { css } from "./PlayerImage.style";
-import { useCss } from "@abst/hooks";
-import { /*Text ,*/ View } from "@abst/web-components";
-import { usePlayer } from "@src/Game/hooks";
-import cn from "classnames";
+import React from 'react';
+import { css } from './PlayerImage.style';
+import { useCss } from '@abst/hooks';
+import { /*Text ,*/ View } from '@abst/web-components';
+import { usePlayer } from '@src/Game/hooks';
+import cn from 'classnames';
 
-const pfx = "https://cdn.nba.com/headshots/nba/latest/1040x760";
+const pfx = 'https://cdn.nba.com/headshots/nba/latest/1040x760';
 
 export function PlayerImage({
   bg,
@@ -25,7 +25,7 @@ export function PlayerImage({
 
   return (
     <View
-      className={cn(cls.wpr, { "no-bg": bg === false, shadow })}
+      className={cn(cls.wpr, { 'no-bg': bg === false, shadow })}
       role="button"
       {...{ onClick }}
     >
