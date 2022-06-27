@@ -13,10 +13,10 @@ export function PlayerList({ completeIds }) {
   return (
     <FixedSizeList
       className="List"
-      height={150}
+      height={600}
       itemCount={completeIds.length}
       itemSize={35}
-      width={200}
+      width={230}
     >
       {Row}
     </FixedSizeList>

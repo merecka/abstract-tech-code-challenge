@@ -43,9 +43,7 @@ export function Scoreboard(/* props */) {
            * All these lookups occur on every render.
            * in other words, this is real bad.
            */
-          _.map(completeIds, (id, index) => {
-            return <FeedItem key={index.toString()} index={index} />;
-          })
+          <PlayerList completeIds={completeIds} />
         }
       </View>
     </View>
