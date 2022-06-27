@@ -1,9 +1,8 @@
 import React from 'react';
 import { css } from './PlayerImage.style';
 import { useCss } from '@abst/hooks';
-import { Text, View } from '@abst/web-components';
 import { usePlayer } from '@src/Game/hooks';
-import cn from 'classnames';
+import { PlayerImageView } from './PlayerImageView';
 
 const pfx = 'https://cdn.nba.com/headshots/nba/latest/1040x760';
 
@@ -24,20 +23,13 @@ export function PlayerImage({
   if (!_.isFinite(playerId)) return null;
 
   return (
-    <View
-      className={cn(cls.wpr, { 'no-bg': bg === false, shadow })}
-      role='button'
-      {...{ onClick }}
-    >
-      {/* NOTE: uncomment this (and the import statement) to see the name of the player */}
-      <Text t={`(This is ${player.displayFirstLast})`} className='cheat' />
-      <img
-        src={`${pfx}/${playerId}.png`}
-        onError={(e) => {
-          e.currentTarget.onerror = null; // prevents endless looping
-          e.currentTarget.src = `${pfx}/logoman.png`;
-        }}
-      />
-    </View>
+    <PlayerImageView
+      player={player}
+      cls={cls}
+      playerId={playerId}
+      shadow={shadow}
+      onClick={onClick}
+      bg={bg}
+    />
   );
 }
