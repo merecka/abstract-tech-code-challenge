@@ -1,9 +1,9 @@
-import React from "react";
-import { css } from "./Scoreboard.style";
-import { useCss, useValueMemo } from "@abst/hooks";
-import { Text, View } from "@abst/web-components";
-import { useRounds, useGame } from "@src/Game/hooks";
-import { FeedItem } from "./FeedItem";
+import React from 'react';
+import { css } from './Scoreboard.style';
+import { useCss, useValueMemo } from '@abst/hooks';
+import { Text, View } from '@abst/web-components';
+import { useRounds, useGame } from '@src/Game/hooks';
+import { PlayerList } from './PlayerList';
 
 export function Scoreboard(/* props */) {
   const cls = useCss(css);
@@ -14,12 +14,12 @@ export function Scoreboard(/* props */) {
   } = Rounds;
 
   const completeIds = useValueMemo(
-    () => _.map(complete, "player"),
+    () => _.map(complete, 'player'),
     [complete.length]
   );
 
   const totalScore = useValueMemo(
-    () => _.sumBy(complete, "score"),
+    () => _.sumBy(complete, 'score'),
     [complete.length]
   );
 
@@ -27,15 +27,15 @@ export function Scoreboard(/* props */) {
     <View className={cls.wpr}>
       <Text
         d4
-        className="round"
-        t={`Round ${_.isFinite(round) ? round + 1 : "--"}`}
-        color="text"
+        className='round'
+        t={`Round ${_.isFinite(round) ? round + 1 : '--'}`}
+        color='text'
       />
       <Text
         d6
-        className="total-score"
+        className='total-score'
         t={`Score: ${totalScore}`}
-        color="text"
+        color='text'
       />
       <View className={cls.list}>
         {
@@ -43,9 +43,7 @@ export function Scoreboard(/* props */) {
            * All these lookups occur on every render.
            * in other words, this is real bad.
            */
-          _.map(completeIds, (id, index) => {
-            return <FeedItem key={index.toString()} index={index} />;
-          })
+          <PlayerList completeIds={completeIds} />
         }
       </View>
     </View>
