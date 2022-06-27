@@ -3,7 +3,7 @@ import { css } from "./Scoreboard.style";
 import { useCss, useValueMemo } from "@abst/hooks";
 import { Text, View } from "@abst/web-components";
 import { useRounds, useGame } from "@src/Game/hooks";
-import { FeedItem } from "./FeedItem";
+import { PlayerList } from "./PlayerList";
 
 export function Scoreboard(/* props */) {
   const cls = useCss(css);
